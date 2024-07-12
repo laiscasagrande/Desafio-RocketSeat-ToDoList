@@ -1,4 +1,4 @@
-input {
+.inputCreateTask {
   width: 39.875rem;
   height: 3.375rem;
   border-radius: 8px;
@@ -6,9 +6,10 @@ input {
   background: var(--gray-500);
   outline: none;
   border: 1px solid var(--gray-700);
+  color: var(--gray-100)
 }
 
-button {
+.buttonCreate {
   height: 3.25rem;
   width: 5.625rem;
   border-radius: 8px;
@@ -28,4 +29,49 @@ button {
   justify-content: center;
   align-items: center;
   margin-top: calc(0px - 1.5rem - 6px)
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.task {
+  width: 46rem;
+  height: 90%;
+  /* background: var(--blue-dark); */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem
+}
+.count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5625rem;
+  height: 1.1875rem;
+  border-radius: 62.4375rem;
+  background: var(--gray-400);
+}
+.count p{
+    font-weight: bold
+}
+.pending{
+    color: var(--blue)
+}
+.completed{
+    color: var(--purple)
+}
+.tasks{
+ border-top: var(--gray-400) solid 2px;
+ border-radius: 8px;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
 }

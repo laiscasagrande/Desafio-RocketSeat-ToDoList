@@ -1,0 +1,15 @@
+.content{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+padding: 4rem;
+}
+.p1{
+    font-weight: bold;
+    color: var(--gray-300)
+}
+.p2{
+    color: var(--gray-300)
+}

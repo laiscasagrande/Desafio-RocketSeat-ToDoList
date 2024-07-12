@@ -1,7 +1,7 @@
 import styles from './App.module.css'
 import { CreateText } from './components/CreateTask'
 import { Header } from './components/Header'
-import { Task } from './components/Task'
+// import { Task } from './components/Task'
 import './global.css'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
    <Header/>
    <div className={styles.content}>
    <CreateText/>
-   <Task/>
+   {/* <Task/> */}
    </div>
    </>
   )
