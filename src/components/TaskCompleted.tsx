@@ -10,7 +10,9 @@ function handleDeleteTask(){
     return (
         <main className={styles.contentTask}>
            <label className={styles.description}>
-            <input type="radio"/>{description}
+            <input type="radio"/>
+            <span></span>
+            {description}
             </label> 
             <button className={styles.buttonTrash} onClick={handleDeleteTask}><Trash size={24}/></button>
         </main>
