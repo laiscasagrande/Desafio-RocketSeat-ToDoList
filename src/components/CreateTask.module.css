@@ -54,8 +54,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.5625rem;
-  height: 1.1875rem;
+  width: flex;
+  padding: 2px 8px;
   border-radius: 62.4375rem;
   background: var(--gray-400);
 }

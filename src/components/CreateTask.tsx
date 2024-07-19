@@ -54,7 +54,7 @@ export function CreateText() {
                     </div>
                     <div className={styles.count}>
                         <p className={styles.completed}>Concluídas</p>
-                        <div className={styles.amount}>0</div>
+                        <div className={styles.amount}>2 de {countTask}</div>
                     </div>
                 </section>
                 <section className={styles.tasks}>
