@@ -5,9 +5,10 @@ import { TaskCompleted } from './TaskCompleted'
 import { TaskNotRegistered } from './TaskNotRegistered'
 
 export function CreateText() {
-    const [tasks, setTasks] = useState(['Tarefa Inicial'])
+    const [tasks, setTasks] = useState<string[]>([])
     const [newTask, setNewTask] = useState('')
     const [countTask, setCountTask] = useState(0)
+    const [taskCheck, setTaskCheck] = useState(0)
 
     function handleNewTask(event: FormEvent) { //função responsável por "guardar a tarefa"
         event.preventDefault()
@@ -40,6 +41,12 @@ export function CreateText() {
         })
     }
 
+    function countTaskCompleted() {
+        setTaskCheck((count) => {
+            return count + 1
+        })
+    }
+
     return (
         <>
             <form className={styles.content} onSubmit={handleNewTask}>
@@ -54,13 +61,13 @@ export function CreateText() {
                     </div>
                     <div className={styles.count}>
                         <p className={styles.completed}>Concluídas</p>
-                        <div className={styles.amount}>2 de {countTask}</div>
+                        <div className={styles.amount}>{taskCheck} de {countTask}</div>
                     </div>
                 </section>
                 <section className={styles.tasks}>
                     {tasks.length > 0 ?
                         tasks.map((task) => {
-                            return <TaskCompleted key={task} description={task} onTaskDeleted={deleteTask} />
+                            return <TaskCompleted key={task} description={task} onTaskDeleted={deleteTask} onTaskCompleted={countTaskCompleted}/>
                         })
                         : <TaskNotRegistered />}
                 </section>
