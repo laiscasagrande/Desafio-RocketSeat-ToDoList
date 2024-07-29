@@ -58,6 +58,7 @@
   padding: 2px 8px;
   border-radius: 62.4375rem;
   background: var(--gray-400);
+  color: var(--gray-100);
 }
 .count p{
     font-weight: bold
