@@ -16,24 +16,26 @@
   color: var(--gray-100);
   cursor: pointer;
 }
-.description input[type="radio"] {
+
+.description input[type="checkbox"] {
   display: none;
 }
 
-.description input[type="radio"] + span {
+.description input[type="checkbox"] + span {
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
   background-color: var(--gray-500);
   border: 2px solid var(--blue);
   border-radius: 50%;
+  transition: 0.2s all;
 }
-.description input[type="radio"]:checked + span {
+.description input[type="checkbox"]:checked + span {
   background-color: var(--purple-dark);
   position: relative;
   border: 0;
 }
-.description input[type="radio"]:checked + span {
+.description input[type="checkbox"]:checked + span {
   background-image: url(../assets/checked.svg);
   background-repeat: no-repeat;
   background-position: center;

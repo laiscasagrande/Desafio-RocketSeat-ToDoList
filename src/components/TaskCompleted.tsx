@@ -19,7 +19,7 @@ export function TaskCompleted({ description, onTaskDeleted, onTaskCompleted }: P
     return (
         <main className={styles.contentTask}>
             <label className={styles.description}>
-                <input type="radio" onClick={handleTaskCheck} id="task" />
+                <input readOnly type="checkbox" onClick={handleTaskCheck} id="task" />
                 <span></span>
                 {description}
             </label>
