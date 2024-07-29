@@ -48,13 +48,13 @@ export function CreateText() {
     }
 
     return (
-        <>
-            <form className={styles.content} onSubmit={handleNewTask}>
+        <main className={styles.containerPrincipal}>
+        <form className={styles.content} onSubmit={handleNewTask}>
                 <input className={styles.inputCreateTask} type="text" placeholder="Adicione uma nova tarefa" value={newTask} onChange={handleCreateNewTask} />
                 <button className={styles.buttonCreate} type="submit">Criar <PlusCircle size={20} /></button>
             </form>
             <main className={styles.task}>
-                <section className={styles.content}>
+                <section className={styles.contentCount}>
                     <div className={styles.count}>
                         <p className={styles.pending}>Tarefas criadas</p>
                         <div className={styles.amount}>{countTask}</div>
@@ -72,6 +72,6 @@ export function CreateText() {
                         : <TaskNotRegistered />}
                 </section>
             </main>
-        </>
+        </main>       
     )
 }

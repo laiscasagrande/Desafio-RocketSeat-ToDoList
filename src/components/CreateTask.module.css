@@ -1,6 +1,13 @@
+.containerPrincipal{
+  max-width: 46rem;
+  width: 100%;
+
+  margin: 0 auto;
+}
+
 .inputCreateTask {
-  width: 39.875rem;
-  height: 3.375rem;
+  width: 100%;
+  height: 90%;
   border-radius: 8px;
   padding: 1rem;
   background: var(--gray-500);
@@ -28,9 +35,10 @@
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  margin-top: calc(0px - 1.5rem - 6px)
+  margin-top: calc(0px - 1.5rem - 6px);
+  margin-bottom: 2.3125rem
 }
-.content {
+.contentCount {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +46,7 @@
   justify-content: space-between;
 }
 .task {
-  width: 46rem;
+  width: 100%;
   height: 90%;
   /* background: var(--blue-dark); */
   display: flex;
