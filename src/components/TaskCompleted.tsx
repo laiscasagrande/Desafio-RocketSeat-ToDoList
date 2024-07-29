@@ -3,16 +3,16 @@ import { PropsTask } from '../models/taskProps'
 import styles from './TaskCompleted.module.css'
 import { useState } from 'react'
 
-export function TaskCompleted({ description, onTaskDeleted, onTaskCompleted }: PropsTask) {
+export function TaskCompleted({data, description, onTaskDeleted, onTaskCompleted }: PropsTask) {
 
     const [buttonDisabled, setButtonDisabled] = useState(false)
 
     function handleDeleteTask() {
-        onTaskDeleted(description) //esse description é como se você o id da tarefa, estou passando como uma forma de identificação única para esxclusão daquela tarefa específica
+        onTaskDeleted(data.id) //esse description é como se você o id da tarefa, estou passando como uma forma de identificação única para esxclusão daquela tarefa específica
     }
 
     function handleTaskCheck() {
-        onTaskCompleted()
+        onTaskCompleted(data.id)
         setButtonDisabled(true)
     }
 

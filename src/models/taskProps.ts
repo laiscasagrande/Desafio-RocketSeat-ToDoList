@@ -1,5 +1,8 @@
+import { taskDetails } from "./taskDetails"
+
 export interface PropsTask {
     description: string,
-    onTaskDeleted: (description: string) => void
-    onTaskCompleted: () => void
+    onTaskDeleted: (id: number) => void
+    onTaskCompleted: (id: number) => void
+    data: taskDetails
 }
