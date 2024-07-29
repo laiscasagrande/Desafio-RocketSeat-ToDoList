@@ -1,4 +1,4 @@
-import { Trash } from 'phosphor-react'
+import {Trash } from 'phosphor-react'
 import { PropsTask } from '../models/taskProps'
 import styles from './TaskCompleted.module.css'
 import { useState } from 'react'
@@ -12,14 +12,14 @@ export function TaskCompleted({data, description, onTaskDeleted, onTaskCompleted
     }
 
     function handleTaskCheck() {
-        onTaskCompleted(data.id)
+        onTaskCompleted({id: data.id, trueOrFalse: !data.isChecked})
         setButtonDisabled(true)
     }
 
     return (
         <main className={styles.contentTask}>
             <label className={styles.description}>
-                <input readOnly type="checkbox" onClick={handleTaskCheck} id="task" />
+                <input readOnly type="checkbox" onClick={handleTaskCheck} id="task" checked={data.isChecked}/>  
                 <span></span>
                 {description}
             </label>

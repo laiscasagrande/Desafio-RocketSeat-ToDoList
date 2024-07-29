@@ -8,9 +8,7 @@ import { taskDetails } from '../models/taskDetails'
 export function CreateText() {
     const [tasks, setTasks] = useState<taskDetails[]>([])
     const [newTask, setNewTask] = useState('')
-
     const [countTask, setCountTask] = useState(0)
-    const [taskCheck, setTaskCheck] = useState(0)
 
     function handleNewTask(event: FormEvent) { //função responsável por "guardar a tarefa"
 
@@ -50,10 +48,21 @@ export function CreateText() {
         })
     }
 
-    function countTaskCompleted() {
-        setTaskCheck((count) => {
-            return count + 1
+    const countTaskCompleted = tasks.reduce((currentCount, countNew) => {
+        if (countNew.isChecked) {
+            return currentCount + 1
+        }
+        return currentCount
+    }, 0)
+
+    function handleCompleteTask({id, trueOrFalse}: {id: number, trueOrFalse: boolean}) {
+        const updatePropertiesTask = tasks.map((task) => { //Aqui, estou atualizando as propriedades da tarefa, por isso estou percorrendo todas as tarefas, pois vou mudar a propriedade isChecked de alguma delas
+            if (task.id === id){
+                return{...task, isChecked: trueOrFalse} //trago todas as propriedades da tarefa que eu selecionei e atualizo isChecked 
+            }
+            return { ...task }//se não houver nenhuma atualização, apenas trago as propriedades já existentes
         })
+        setTasks(updatePropertiesTask) //passo para o array de tarefas as tarefas atualizadas
     }
 
     return (
@@ -70,13 +79,13 @@ export function CreateText() {
                     </div>
                     <div className={styles.count}>
                         <p className={styles.completed}>Concluídas</p>
-                        <div className={styles.amount}>{taskCheck} de {countTask}</div>
+                        <div className={styles.amount}>{countTaskCompleted} de {countTask}</div>
                     </div>
                 </section>
                 <section className={styles.tasks}>
                     {tasks.length > 0 ?
                         tasks.map((task) => {
-                            return <TaskCompleted key={task.id} description={task.description} onTaskDeleted={deleteTask} onTaskCompleted={countTaskCompleted} data={task} />
+                            return <TaskCompleted key={task.id} description={task.description} onTaskDeleted={deleteTask} onTaskCompleted={handleCompleteTask} data={task} />
                         })
                         : <TaskNotRegistered />}
                 </section>
