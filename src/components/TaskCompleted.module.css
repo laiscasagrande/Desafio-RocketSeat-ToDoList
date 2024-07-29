@@ -45,4 +45,8 @@
   border: 0;
   color: var(--gray-300);
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
